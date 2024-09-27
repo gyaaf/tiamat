@@ -23,3 +23,8 @@ Tiamat is a Python script that provides many utilitary functions to the client a
 
 * Instalock
 * Auto Ban
+
+## Usage
+
+![alt text](https://i.imgur.com/rFEmFNp.png)
+
