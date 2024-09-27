@@ -14,7 +14,7 @@ Tiamat is a Python script that provides many utilitary functions to the client a
 
    ```bash
    git clone https://github.com/gyaaf/tiamat.git
-   cd draktharr
+   cd tiamat
    pip install -r requirements.txt
    python main.py
     ```
