@@ -19,7 +19,7 @@ def fetch_all_champion_skins():
     
     if response.status_code != 200:
         print("Error while searching skins.")
-        input()
+        input("\nPress Enter.")
         return None
     
     skins_data = response.json()
@@ -90,10 +90,10 @@ def change_profile_background(skin_id):
             print(colored(f"Background changed successfully to skin ID: {skin_id}.", "green"))
         else:
             print(colored(f"Error changing the background. Response code: {response.status_code}", "red"))
-            input()
+            input("\nPress Enter.")
     except Exception as e:
         print(colored(f"Error changing the background: {e}", "red"))
-        input()
+        input("\nPress Enter.")
 
 # Função principal do programa
 def change_background():
@@ -116,16 +116,16 @@ def change_background():
                     change_profile_background(selected_skin_id)
                 else:
                     print("Invalid option.")
-                    input()
+                    input("\nPress Enter.")
             except ValueError:
                 print("Please insert a valid number.")
-                input()
+                input("\nPress Enter.")
         else:
             print("Skin not found.")
-            input()
+            input("\nPress Enter.")
     else:
         print("Error loading skins.")
-        input()
+        input("\nPress Enter.")
 
 if __name__ == "__main__":
     main()

@@ -5,6 +5,8 @@ from termcolor import colored
 from AutoAccept import autoaccept
 from Dodge import dodge
 from Riotidchanger import change_riotid
+from Iconsclient import icon_client
+from RestartUX import restart
 
 
 import threading
@@ -31,11 +33,13 @@ def main_menu():
 
     options = {
         1: change_profile_icon,
-        2: change_background,
-        3: reveal,
-        4: auto_accept.toggle_auto_accept,
-        5: dodge,
-        6: change_riotid,
+        2: icon_client,
+        3: change_background,
+        4: reveal,
+        5: auto_accept.toggle_auto_accept,
+        6: dodge,
+        7: change_riotid,
+        8: restart,
         99: exit_program,
     }
 
@@ -52,11 +56,13 @@ def main_menu():
             # Exibe o menu com o estado do Auto Accept atualizado
             option = int(input(f"""
 1. Icon Changer
-2. Background Changer
-3. Lobby Reveal
-4. Toggle Auto Accept ({colored(auto_accept_state, "yellow")})
-5. Dodge
-6. Riot ID Changer
+2. Client-Only Icon Changer
+3. Background Changer
+4. Lobby Reveal
+5. Toggle Auto Accept ({colored(auto_accept_state, "yellow")})
+6. Dodge
+7. Riot ID Changer
+8. Restart Client UX
 
 99. Exit\n
 ~-> """))

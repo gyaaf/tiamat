@@ -2,12 +2,12 @@ import json
 from termcolor import colored
 from Rengar import Rengar  # Certifique-se de que o Rengar.py está no mesmo diretório
 
-def change_profile_icon():
+def icon_client():
     # Inicializa a classe Rengar
     rengar = Rengar()
 
     # Pede o ID do ícone ao usuário
-    icon_id = input(colored("Type the icon ID (1 - 100): \n", "magenta"))
+    icon_id = input(colored("Type the icon ID: \n", "magenta"))
 
     # Verifica se o input é um número válido
     try:
@@ -17,11 +17,11 @@ def change_profile_icon():
         return
 
     # Cria o corpo da requisição
-    body = {"profileIconId": icon_id}
+    body = {"icon": icon_id}
 
     # Faz a requisição PUT usando a classe Rengar
     try:
-        response = rengar.lcu_request("PUT", "/lol-summoner/v1/current-summoner/icon", body)
+        response = rengar.lcu_request("PUT", "/lol-chat/v1/me", body)
         if response.status_code == 201 or response.status_code == 200:
             print(colored(f"Icon sucessfully changed to {icon_id}", "green"))
         else:
