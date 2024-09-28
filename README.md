@@ -1,12 +1,14 @@
 # Tiamat
 
 Tiamat is a CLI Python script that provides many utilitary functions to the league client as:
-* Auto Accept
-* Riot ID Changer
-* Dodge ( still lose lp but no need to clos the client )
-* Icon Changer
+* Icon Changer (1-100)
+* Client-Only Icon Changer (All Icons)
 * Profile Background Changer
 * Lobby Reveal
+* Auto Accept
+* Dodge ( still lose lp but no need to clos the client )
+* Riot ID Changer
+* Restart Client UX
 
 ## Installation
 
@@ -26,5 +28,5 @@ Tiamat is a CLI Python script that provides many utilitary functions to the leag
 
 ## Usage
 
-![alt text](https://i.imgur.com/rFEmFNp.png)
+![alt text](https://i.imgur.com/fbqrlfm.png)
 
