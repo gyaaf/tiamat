@@ -5,6 +5,7 @@ import requests
 import base64
 import json
 import urllib3
+from time import sleep
 
 urllib3.disable_warnings()
 
@@ -23,6 +24,15 @@ def find_league_client_credentials():
             if port and token:
                 return port, token
     return None, None
+
+def check_league_client():
+    while True:
+        port_check, token_check = find_league_client_credentials()
+        if port_check == None and token_check == None:
+            sleep(2)
+            continue
+        else:
+            break
 
 
 def find_riot_client_credentials():

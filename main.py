@@ -7,6 +7,9 @@ from Dodge import dodge
 from Riotidchanger import change_riotid
 from Iconsclient import icon_client
 from RestartUX import restart
+from Welcome import welcome
+from Rengar import check_league_client
+
 
 
 import threading
@@ -48,8 +51,12 @@ def main_menu():
 
     while True:
         try:
+            print("\nWaiting for league client.\n")
+            check_league_client()
             system("cls")
             intro()
+            print("\n")
+            welcome()
             # Atualiza o estado do Auto Accept no menu dinamicamente
             auto_accept_state = "ON" if auto_accept.auto_accept_enabled else "OFF"
 
@@ -73,6 +80,8 @@ def main_menu():
                 print("Invalid option. Please choose a valid number.")
         except ValueError:
             print("Invalid input. Please enter a number.")
+        except KeyError:
+            print("Option not found.")
 
 if __name__ == "__main__":
     main_menu()
