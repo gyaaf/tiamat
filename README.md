@@ -6,7 +6,7 @@ Tiamat is a CLI Python script that provides many utilitary functions to the leag
 * Profile Background Changer
 * Lobby Reveal
 * Auto Accept
-* Dodge ( still lose lp but no need to clos the client )
+* Dodge ( still lose lp but no need to close the client )
 * Riot ID Changer
 * Restart Client UX
 
