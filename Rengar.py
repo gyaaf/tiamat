@@ -33,6 +33,7 @@ def check_league_client():
             continue
         else:
             break
+    return port_check, token_check
 
 
 def find_riot_client_credentials():

@@ -4,10 +4,10 @@ rengar = Rengar()
 
 
 def welcome():
-	req = rengar.lcu_request("GET", "/lol-chat/v1/me", "").json()
+	req = rengar.lcu_request("GET", "/lol-summoner/v1/current-summoner", "").json()
 
 	name = req["gameName"]
 
-	print(f"Welcome {name}")
+	return name
 
 

@@ -1,3 +1,5 @@
+#Importing all client tools
+
 from Icons import change_profile_icon
 from Backgrounds import change_background
 from Reveal import reveal
@@ -9,11 +11,12 @@ from Iconsclient import icon_client
 from RestartUX import restart
 from Welcome import welcome
 from Rengar import check_league_client
-
-
-
+from time import sleep
 import threading
 from os import system
+
+
+# defining core script functions
 
 def intro():
     print(colored("""
@@ -51,16 +54,19 @@ def main_menu():
 
     while True:
         try:
+
+            #checks if the client is still open after a tool is used and clean the screen.
+
             print("\nWaiting for league client.\n")
+
             check_league_client()
             system("cls")
             intro()
             print("\n")
-            welcome()
-            # Atualiza o estado do Auto Accept no menu dinamicamente
+            # Updates the auto accept's state
             auto_accept_state = "ON" if auto_accept.auto_accept_enabled else "OFF"
 
-            # Exibe o menu com o estado do Auto Accept atualizado
+            # Prints the menu with the auto accept status
             option = int(input(f"""
 1. Icon Changer
 2. Client-Only Icon Changer
@@ -72,14 +78,14 @@ def main_menu():
 8. Restart Client UX
 
 99. Exit\n
-~-> """))
+ ~-> """))
 
             if option in options:
-                options[option]()  # Chama a função correspondente
+                options[option]()  # Calls the correct function
             else:
                 print("Invalid option. Please choose a valid number.")
-        except ValueError:
-            print("Invalid input. Please enter a number.")
+        #except ValueError:
+            #print("Invalid input. Please enter a number.")
         except KeyError:
             print("Option not found.")
 
