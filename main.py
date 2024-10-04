@@ -36,6 +36,9 @@ def exit_program():
 
 
 def main_menu():
+    print("\nWaiting for league client.\n")
+    check_league_client()
+
     auto_accept = autoaccept()
     instalock_autoban = InstalockAutoban()  # Instanciando o novo módulo
 
@@ -61,7 +64,6 @@ def main_menu():
 
     while True:
         try:
-            print("\nWaiting for league client.\n")
             check_league_client()
             system("cls")
             intro()
