@@ -29,7 +29,7 @@ def check_league_client():
     while True:
         port_check, token_check = find_league_client_credentials()
         if port_check == None and token_check == None:
-            sleep(2)
+            sleep(0.5)
             continue
         else:
             break
@@ -81,10 +81,15 @@ def return_lcu_headers(leagueToken):
 
 class Rengar:
     def __init__(self):
+        self.update_league_credentials()
+        self.update_riot_credentials()
+
+    def update_league_credentials(self):
         self.leaguePort, self.leagueToken = find_league_client_credentials()
         self.leagueUrl = return_lcu_url(self.leaguePort)
         self.leagueHeaders = return_lcu_headers(self.leagueToken)
 
+    def update_riot_credentials(self):
         self.riotPort, self.riotToken = find_riot_client_credentials()
         self.riotUrl = return_riot_url(self.riotPort)
         self.riotHeaders = return_riot_headers(self.riotToken)
@@ -100,24 +105,30 @@ class Rengar:
         url = f'{self.leagueUrl}{endpoint}'
         if body == "":
             body = None
-
-        if body is not None:
+        elif body is not None:
             body = json.dumps(body)
 
-        if method == "GET":
-            req = requests.get(url, headers=self.leagueHeaders, data=body, verify=False)
-        elif method == "POST":
-            req = requests.post(url, headers=self.leagueHeaders, data=body, verify=False)
-        elif method == "PUT":
-            req = requests.put(url, headers=self.leagueHeaders, data=body, verify=False)
-        elif method == "DELETE":
-            req = requests.delete(url, headers=self.leagueHeaders, data=body, verify=False)
-        elif method == "PATCH":
-            req = requests.patch(url, headers=self.leagueHeaders, data=body, verify=False)
-        else:
-            raise ValueError('Invalid method')
+        try:
+            if method == "GET":
+                req = requests.get(url, headers=self.leagueHeaders, data=body, verify=False)
+            elif method == "POST":
+                req = requests.post(url, headers=self.leagueHeaders, data=body, verify=False)
+            elif method == "PUT":
+                req = requests.put(url, headers=self.leagueHeaders, data=body, verify=False)
+            elif method == "DELETE":
+                req = requests.delete(url, headers=self.leagueHeaders, data=body, verify=False)
+            elif method == "PATCH":
+                req = requests.patch(url, headers=self.leagueHeaders, data=body, verify=False)
+            else:
+                raise ValueError('Invalid method')
 
-        return req
+            req.raise_for_status()
+            return req
+        except requests.exceptions.RequestException as e:
+            check_league_client()
+            self.update_league_credentials()
+            req = self.lcu_request(method, endpoint, body)
+            return req
 
     def riot_request(self, method, endpoint, body: dict):
         method = method.upper()
@@ -128,17 +139,22 @@ class Rengar:
         if body is not None:
             body = json.dumps(body)
 
-        if method == "GET":
-            req = requests.get(url, headers=self.riotHeaders, data=body, verify=False)
-        elif method == "POST":
-            req = requests.post(url, headers=self.riotHeaders, data=body, verify=False)
-        elif method == "PUT":
-            req = requests.put(url, headers=self.riotHeaders, data=body, verify=False)
-        elif method == "DELETE":
-            req = requests.delete(url, headers=self.riotHeaders, data=body, verify=False)
-        elif method == "PATCH":
-            req = requests.patch(url, headers=self.riotHeaders, data=body, verify=False)
-        else:
-            raise ValueError('Invalid method')
+        try:
+            if method == "GET":
+                req = requests.get(url, headers=self.riotHeaders, data=body, verify=False)
+            elif method == "POST":
+                req = requests.post(url, headers=self.riotHeaders, data=body, verify=False)
+            elif method == "PUT":
+                req = requests.put(url, headers=self.riotHeaders, data=body, verify=False)
+            elif method == "DELETE":
+                req = requests.delete(url, headers=self.riotHeaders, data=body, verify=False)
+            elif method == "PATCH":
+                req = requests.patch(url, headers=self.riotHeaders, data=body, verify=False)
+            else:
+                raise ValueError('Invalid method')
 
-        return req
+            return req
+        except requests.exceptions.RequestException as e:
+            check_league_client()
+            self.update_riot_credentials()
+            return self.riot_request(method, endpoint, body)
