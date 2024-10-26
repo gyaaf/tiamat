@@ -28,6 +28,6 @@ class autoaccept:
                     #print("Matchmaking Data:", match_data)
 
                     if match_data.get("searchState") == "Found":
-                        self.accept_match(None)  # Não há um ID de partida, basta aceitar
+                        self.accept_match()  # Não há um ID de partida, basta aceitar
             
             time.sleep(0.5)
