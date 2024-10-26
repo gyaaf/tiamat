@@ -57,7 +57,7 @@ def main_menu():
     }
 
     # Inicia a thread para aceitar partidas automaticamente
-    threading.Thread(target=auto_accept.auto_accept_matches, daemon=True).start()
+    threading.Thread(target=auto_accept.monitor_queue, daemon=True).start()
 
     # Inicia a thread para monitorar a seleção de campeões e aplicar Instalock e AutoBan
     threading.Thread(target=instalock_autoban.monitor_champ_select, daemon=True).start()
