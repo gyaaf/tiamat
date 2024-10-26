@@ -18,16 +18,16 @@ class autoaccept:
     def monitor_queue(self):
         while True:
             if self.auto_accept_enabled:
+                # Faz a requisição para verificar o estado da busca por partida
                 response = self.rengar.lcu_request("GET", "/lol-lobby/v2/lobby/matchmaking/search-state", "")
                 
                 if response.status_code == 200:
                     match_data = response.json()
-                    
+                    print(match_data)
+                    # Exibe o conteúdo da resposta para verificar o estado do matchmaking
+                    #print("Matchmaking Data:", match_data)
+
                     if match_data.get("searchState") == "Found":
-                        self.accept_match() 
-                elif response.status_code == 404:
-                    print("No active matchmaking search.")
-                else:
-                    print(f"Failed to fetch matchmaking state. Status code: {response.status_code}")
+                        self.accept_match(None)  # Não há um ID de partida, basta aceitar
             
-            time.sleep(1)
+            time.sleep(0.5)

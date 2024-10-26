@@ -30,10 +30,8 @@ def check_league_client():
         port_check, token_check = find_league_client_credentials()
         if port_check == None and token_check == None:
             sleep(0.5)
-            continue
         else:
-            break
-    return port_check, token_check
+            return port_check, token_check
 
 
 def find_riot_client_credentials():
@@ -89,6 +87,8 @@ class Rengar:
         self.leagueUrl = return_lcu_url(self.leaguePort)
         self.leagueHeaders = return_lcu_headers(self.leagueToken)
 
+
+
     def update_riot_credentials(self):
         self.riotPort, self.riotToken = find_riot_client_credentials()
         self.riotUrl = return_riot_url(self.riotPort)
@@ -122,7 +122,6 @@ class Rengar:
             else:
                 raise ValueError('Invalid method')
 
-            req.raise_for_status()
             return req
         except requests.exceptions.RequestException as e:
             check_league_client()
