@@ -23,7 +23,7 @@ class autoaccept:
                 
                 if response.status_code == 200:
                     match_data = response.json()
-                    print(match_data)
+                    #print(match_data)
                     # Exibe o conteúdo da resposta para verificar o estado do matchmaking
                     #print("Matchmaking Data:", match_data)
 
