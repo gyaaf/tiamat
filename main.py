@@ -32,7 +32,7 @@ def intro():
 
 
 def exit_program():
-    exit()
+    raise KeyboardInterrupt
 
 
 def main_menu():
