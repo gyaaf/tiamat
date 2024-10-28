@@ -10,7 +10,6 @@ from Iconsclient import icon_client
 from RestartUX import restart
 from Rengar import check_league_client
 from InstalockAutoban import InstalockAutoban  # Importando o novo módulo
-from time import sleep
 import threading
 from os import system
 
@@ -100,11 +99,13 @@ def main_menu():
                 else:
                     options[option]()  # Chama a função correta para outros casos
             else:
-                print("Invalid option. Please choose a valid number.")
+                continue
 
-        except KeyError:
-            print("Option not found.")
 
+        except KeyboardInterrupt:
+            exit_program()
+        except:
+            pass
 
 
 if __name__ == "__main__":
