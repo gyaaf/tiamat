@@ -82,7 +82,7 @@ def main_menu():
 6. Dodge
 7. Riot ID Changer
 8. Restart Client UX
-9. Toggle Instalock ({colored(instalock_state, "yellow")}) - Champion: {colored(instalock_autoban.instalock_champion, "cyan")}
+9. Toggle Autopick ({colored(instalock_state, "yellow")}) - Champion: {colored(instalock_autoban.instalock_champion, "cyan")}
 10. Toggle AutoBan ({colored(autoban_state, "yellow")}) - Champion: {colored(instalock_autoban.auto_ban_champion, "cyan")}
 
 99. Exit\n 
