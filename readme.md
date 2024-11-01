@@ -14,7 +14,7 @@ If you have any suggestions, questions or complaints you can message me on disco
 * Dodge ( still lose lp but no need to close the client )
 * Riot ID Changer
 * Restart Client UX
-* Instalock
+* Autopick
 * Autoban
 
 ## Installation
