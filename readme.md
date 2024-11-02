@@ -1,34 +1,89 @@
 # Tiamat
 
-Tiamat is a CLI Python script that provides many utilitary functions to the league client inspired by [KbotExt](https://github.com/KebsCS/KBotExt/), by Kebs
+Tiamat is a CLI Python script that provides utility functions for the League of Legends client, inspired by [KbotExt](https://github.com/KebsCS/KBotExt/), by Kebs.
 
-If you have any suggestions, questions or complaints you can message me on discord: gyaf
+## ⚠️ Important Notice
+Use at your own risk, as some features might violate Riot Games' Terms of Service.
 
-## Functions
+## 🌟 Features
 
-* Icon Changer (1-100)
-* Client-Only Icon Changer (All Icons)
+### Customization
+* Icon Changer
+  * Icon Changer (Icons 1-100)
+  * Client Only (All Available Icons)
 * Profile Background Changer
-* Lobby Reveal
-* Auto Accept
-* Dodge ( still lose lp but no need to close the client )
 * Riot ID Changer
+
+### Game Automation
+* Auto Accept Match
+* Autopick Champion
+* Autoban Champion
+* Smart Dodge (Avoid client restart)
+
+### Utility
+* Lobby Reveal
 * Restart Client UX
-* Autopick
-* Autoban
 
-## Installation
+## 🚀 Installation
 
+### Prerequisites
+- Python 3.8 or higher
+- League of Legends client installed
+- Git (for cloning the repository)
+
+### Quick Start
 1. Clone this repository:
+```bash
+git clone https://github.com/gyaaf/tiamat.git
+```
 
-   ```bash
-   git clone https://github.com/gyaaf/tiamat.git
-   cd tiamat
-   pip install -r requirements.txt
-   python main.py
-    ```
+2. Navigate to the project directory:
+```bash
+cd tiamat
+```
 
-## Usage
+3. Install required dependencies:
+```bash
+pip install -r requirements.txt
+```
 
-![alt text](https://i.imgur.com/00r0SqO.png)
+4. Run the application:
+```bash
+python main.py
+```
 
+## 💡 Usage
+
+### First Time Setup
+1. Launch League of Legends client
+2. Start Tiamat
+3. Select desired function from the menu
+
+### Menu Interface
+![Tiamat Menu Interface](https://i.imgur.com/00r0SqO.png)
+
+### Feature Guide
+* **Icon Changer**: Choose between icon changer (1-100) or client only (all icons)
+* **Profile Background**: Search the skin/champion name and select the one you want
+* **Auto Accept**: Automatically accepts match when found
+* **Autopick**: Select champion to instantly pick when available
+* **Autoban**: Select champion to ban during champion select
+* **Smart Dodge**: Dodge queue without client restart
+
+## 🤝 Contributing
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## 📫 Support
+If you have any questions, suggestions, or complaints:
+- Discord: gyaf
+- Create an [Issue](https://github.com/gyaaf/tiamat/issues)
+
+## 🙏 Acknowledgments
+* [KbotExt](https://github.com/KebsCS/KBotExt/) by Kebs for inspiration
+* All contributors and users of Tiamat
