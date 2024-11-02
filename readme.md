@@ -23,6 +23,7 @@ Use at your own risk, as some features might violate Riot Games' Terms of Servic
 ### Utility
 * Lobby Reveal
 * Restart Client UX
+* Disconnect from chat (toggle offline)
 
 ## 🚀 Installation
 
