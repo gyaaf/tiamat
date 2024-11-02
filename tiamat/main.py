@@ -96,9 +96,6 @@ class LeagueClientTool:
                 elif key == 10:  # AutoBan
                     state = "ON" if self.instalock_autoban.auto_ban_enabled else "OFF"
                     menu_text += f" ({colored(state, 'yellow')}) - Champion: {colored(self.instalock_autoban.auto_ban_champion, 'cyan')}"
-                elif key == 11:
-                    state = "ON" if self.chat.chat_state else "OFF"
-                    menu_text += f" ({colored(state, 'yellow')})"
                 else:
                     state = self._get_feature_state(option.feature_name)
                     menu_text += f" ({colored(state, 'yellow')})"
@@ -111,7 +108,7 @@ class LeagueClientTool:
         """Retorna o estado atual de uma feature."""
         states = {
             "auto_accept": self.auto_accept.auto_accept_enabled,
-            "chat": self.chat.return_state()
+            "chat": self.chat.chat_state
         }
         return "ON" if states.get(feature_name, False) else "OFF"
 
