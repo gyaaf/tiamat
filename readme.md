@@ -70,6 +70,7 @@ python main.py
 * **Autopick**: Select champion to instantly pick when available
 * **Autoban**: Select champion to ban during champion select
 * **Smart Dodge**: Dodge queue without client restart
+* **Chat Disconnect**: Disconnect from league chat and appear offline to your friends
 
 ## 🤝 Contributing
 Contributions are welcome! Please feel free to submit a Pull Request.
