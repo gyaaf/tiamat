@@ -2,6 +2,8 @@
 
 Tiamat is a CLI Python script that provides utility functions for the League of Legends client, inspired by [KbotExt](https://github.com/KebsCS/KBotExt/), by Kebs.
 
+![Tiamat Menu Interface](https://i.imgur.com/00r0SqO.png)
+
 ## ⚠️ Important Notice
 Use at your own risk, as some features might violate Riot Games' Terms of Service.
 
@@ -60,8 +62,6 @@ python main.py
 2. Start Tiamat
 3. Select desired function from the menu
 
-### Menu Interface
-![Tiamat Menu Interface](https://i.imgur.com/00r0SqO.png)
 
 ### Feature Guide
 * **Icon Changer**: Choose between icon changer (1-100) or client only (all icons)
