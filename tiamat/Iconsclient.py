@@ -35,4 +35,4 @@ def icon_client():
 
 
 if __name__ == "__main__":
-	change_profile_icon()
+	icon_client()

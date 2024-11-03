@@ -45,6 +45,7 @@ class LeagueClientTool:
     """
 
     def __init__(self):
+        print("Starting...")
         self.auto_accept = autoaccept()
         self.instalock_autoban = InstalockAutoban()
         self.chat = Chat()

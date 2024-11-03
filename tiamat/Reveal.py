@@ -60,7 +60,7 @@ def reveal():
 
                 # Constrói a URL para Porofessor.gg
                 url = f"https://porofessor.gg/pregame/{region}/{summ_names_str}/soloqueue/season"
-                print(colored(f"Players: {playersxd}", "magenta"))
+                #print(colored(f"Players: {playersxd}", "magenta"))
                 webbrowser.open(url)  # Usa webbrowser para abrir a URL corretamente
                 input("\nPress Enter.")
 

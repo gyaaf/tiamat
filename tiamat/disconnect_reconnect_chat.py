@@ -5,7 +5,15 @@ rengar = Rengar()
 
 class Chat:
     def __init__(self):
-        self.chat_state = False
+        self.chat_state = self.return_disconnect()
+
+    def return_disconnect(self):
+        req = rengar.riot_request("GET", "/chat/v1/session", "")
+        req_data = req.json()
+        if req_data["state"] == "disconnected":
+            return True
+        else:
+            return False
 
     def disconnect(self):
         body = {"config": "disable"}

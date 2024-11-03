@@ -18,7 +18,7 @@ class InstalockAutoban:
         """
         Atualiza a lista de campeões obtendo seus IDs e nomes da API LCU.
         """
-        print("Fetching champion list from LCU...")
+        #print("Fetching champion list from LCU...")
         response = self.rengar.lcu_request("GET", "/lol-champ-select/v1/all-grid-champions", "")
 
         if response.status_code == 200:
@@ -27,7 +27,7 @@ class InstalockAutoban:
                 champ_id = champ["id"]
                 champ_name = champ["name"]
                 self.champ_dict[champ_name.lower()] = champ_id  # Armazena o nome em minúsculas para fácil busca
-            print("Champion list updated successfully.")
+            #print("Champion list updated successfully.")
         else:
             print("Failed to fetch champion data.")
 
